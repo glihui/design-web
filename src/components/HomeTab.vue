@@ -41,31 +41,41 @@ export default class HomeTab extends Vue {
         width: 1200px;
         height: 70px;
         margin: 0 auto;
-        padding: 0 55px;
+        padding: 0 56px;
         box-sizing: border-box;
         display: flex;
         justify-content: space-between;
         .logo{
             line-height: 70px;
+            font-size:14px;
+            font-family:Andale Mono;
+            color: #707070;
         }
         .tab-list{
             display: flex;
             .tab-list-left{
                 display: flex;
-                line-height: 69px;
+                line-height: 70px;
                 li{
-                   margin-left: 40px; 
+                   margin-left: 37px; 
+                   font-family:Helvetica;
+                   font-size:14px;
+                   color: #666666;
                    cursor: pointer;
                 }
             }
             .tab-list-right{
-               width: 120px;
+               width: 115px;
                height: 38px;
                text-align: center;
-               line-height: 38px;
-               border: 1px solid #f3a951;
-               border-radius: 19px;
-               margin: 14.5px 0 0 30px;
+               line-height: 40px;
+               border: 1px solid #F3A951;
+               border-radius: 22px;
+               margin: 15px 0 0 24px;
+               font-size:14px;
+               font-weight:600;
+               font-family:Gibson;
+               color: #333333;
                cursor: pointer;
             }
         }

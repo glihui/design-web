@@ -2,7 +2,7 @@
     <div class="foot-div">
         <div class="foot-box">
             <div class="foot-user-msg">
-                <h1 class="user-title">Kristen Shen</h1>
+                <div class="user-title">Kristen Shen</div>
                 <div class="user-des">
                     A professional and personable<br/>
                     User Experience / User Interface<br/>
@@ -41,52 +41,57 @@ export default class Foot extends Vue{
 <style lang="scss" scoped>
     .foot-div{
         width: 100%;
-        background-color: #fbfcff;
+        background-color: #FBFCFF;
         .foot-box{
             width: 1200px;
             height: 600px;
             margin: 0 auto;
-            padding: 0 55px;
-            padding-top: 200px;
+            padding: 0 56px;
+            padding-top: 209px;
             box-sizing: border-box;
             display: flex;
             justify-content: space-between;
             .foot-user-msg{
                 .user-title{
                     color: #333;
-                    font-size: 15px;
-                    padding-bottom: 25px;
+                    font-size: 16px;
+                    line-height:21px;
+                    font-weight:bold;
+                    padding-bottom: 30px;
                 }
                 .user-des{
-                    color: #6d6d6d;
-                    font-size: 15px;
+                    color: #999999;
+                    font-size: 16px;
                     line-height: 24px;
                 }
             }
             .user-relation{
                 .relation-title{
                     color: #333;
-                    font-size: 15px;
+                    font-size: 16px;
                     font-weight: bold;
                 }
                 .relation-way{
-                    color: #6d6d6d;
+                    color: #666666;
+                    font-size: 16px;
+                    line-height:21px;
                     padding-top: 30px;
                 }
             }
             .social-link{
                 .social-link-title{
                     color: #333;
-                    font-size: 15px;
+                    font-size: 16px;
                     font-weight: bold;
+                    line-height:21px;
                     padding-bottom: 30px;
                 }
                 .social-icon-box{
                     .social-icon{
-                        width: 40px;
-                        height: 40px;
-                        border-radius: 20px;
-                        margin-right: 16px;
+                        width: 43px;
+                        height: 43px;
+                        border-radius: 50%;
+                        margin-right: 17px;
                         background-color: orange;
                     }
                 }
