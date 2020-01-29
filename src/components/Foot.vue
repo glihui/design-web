@@ -21,9 +21,15 @@
             <div class="social-link">
                 <div class="social-link-title">Social Links</div>
                 <div class="social-icon-box">
-                    <img class="social-icon"/>
-                    <img class="social-icon"/>
-                    <img class="social-icon"/>
+                    <a href="https://dribbble.com/KristenShen" target="_blank">
+                        <img class="social-icon" src="../assets/dribbble.png"/>
+                    </a>
+                    <a href="https://www.behance.net/shennan4154482" target="_blank">
+                        <img class="social-icon" src="../assets/behance.png"/>
+                    </a>
+                    <a href="https://www.weibo.com/2236588723/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank">
+                      <img class="social-icon" src="../assets/weibo.png"/>  
+                    </a>
                 </div>
             </div>
         </div>
@@ -90,9 +96,7 @@ export default class Foot extends Vue{
                     .social-icon{
                         width: 43px;
                         height: 43px;
-                        border-radius: 50%;
                         margin-right: 17px;
-                        background-color: orange;
                     }
                 }
             }

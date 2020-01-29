@@ -22,7 +22,7 @@
         <div class="me-evaluate-box">
           <div class="me-evaluate-item" v-for="(item, index) in evaluateList" :key="index">
             <div class="me-evaluate-img">
-              <img class="evaluate-icon"/>
+              <img class="evaluate-icon" :src="item.icon"/>
             </div>
             <div class="evaluate-title">{{item.title}}</div>
             <div class="evaluate-des" v-html="item.des"></div>
@@ -58,19 +58,19 @@
   export default class Home extends Vue {
     @Provide() evaluateList: Array<Object> = [
       {
-        icon: "",
+        icon: require("../assets/icon_AttentionToDetail.png"),
         title: "ATTENTION TO DETAIL",
         des: `I care about every single<br/>
               Pixel`
       },
       {
-        icon: "",
+        icon: require("../assets/icon_EnjoyLearning.png"),
         title: "ENJOY LEARNING",
         des: `I learn Adobe After Effect<br/>
               by myself`
       },
       {
-        icon: "",
+        icon: require("../assets/icon_TeamPlayer.png"),
         title: "TEAM PLAYER",
         des: `Listening & being part of<br/>
               A team is where I’m at`
@@ -192,10 +192,9 @@
         height:214px;
         text-align: center;
         .me-evaluate-img{
-          width: 78px;
-          height: 90px;
+          width: 80px;
+          height: 92px;
           margin: 26px auto 15px auto;
-          background-color: orange;
         }
         .evaluate-title{
           font-size: 14px;
