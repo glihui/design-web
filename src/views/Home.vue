@@ -164,8 +164,8 @@
       .user-img{
         width: 345px;
         height: 347px;
-        background-color: orange;
-        border-radius: 173px;
+        // background-color: orange;
+        // border-radius: 173px;
       }
     }
   }
