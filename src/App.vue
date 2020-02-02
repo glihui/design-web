@@ -30,8 +30,8 @@ export default class App extends Vue {
 <style lang="scss">
 body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select{margin:0;padding:0}
 body{font:12px"宋体","Arial Narrow",HELVETICA;background:#fff;-webkit-text-size-adjust:100%;}
-a{color:#2d374b;text-decoration:none}
-a:hover{color:#cd0200;text-decoration:underline}
+a{text-decoration:none}
+a:hover{text-decoration:none}
 em{font-style:normal}
 li{list-style:none}
 img{border:0;vertical-align:middle}
@@ -48,7 +48,7 @@ p{word-wrap:break-word}
   position: fixed;
   left: 0;
   top: 0;
-  z-index: 1;
+  z-index: 3;
   background-color: #fff;
   a {
     font-weight: bold;

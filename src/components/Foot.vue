@@ -21,14 +21,11 @@
             <div class="social-link">
                 <div class="social-link-title">Social Links</div>
                 <div class="social-icon-box">
-                    <a href="https://dribbble.com/KristenShen" target="_blank">
-                        <img class="social-icon" src="../assets/dribbble.png"/>
-                    </a>
-                    <a href="https://www.behance.net/shennan4154482" target="_blank">
-                        <img class="social-icon" src="../assets/behance.png"/>
-                    </a>
-                    <a href="https://www.weibo.com/2236588723/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank">
-                      <img class="social-icon" src="../assets/weibo.png"/>  
+                    <a v-for="item in socialIconList" :key="item.link" :href="item.link" target="_blank">
+                        <img @mouseenter="enter(item)" 
+                             @mouseleave="leave(item)"
+                             class="social-icon" 
+                             :src="item.is_hover ? item.select_img:item.img"/>
                     </a>
                 </div>
             </div>
@@ -38,9 +35,42 @@
 <script lang="ts">
 import { Component, Vue, Provide } from 'vue-property-decorator';
 
+interface socialIconObject {
+    is_hover: Boolean,
+    img: String,
+    select_img: String,
+    link: String
+}
+
 @Component
 export default class Foot extends Vue{
-    
+    @Provide() socialIconList: Array<socialIconObject> = [
+        {
+            is_hover: false,
+            img: require('../assets/dribbble@2x.png'),
+            select_img: require('../assets/select_dribbble@2x.png'),
+            link: 'https://dribbble.com/KristenShen'
+        },
+        {   
+            is_hover: false,
+            img: require('../assets/behance@2x.png'),
+            select_img: require('../assets/select_behance@2x.png'),
+            link: 'https://www.behance.net/shennan4154482'
+        },
+        {
+            is_hover: false,
+            img: require('../assets/weibo@2x.png'),
+            select_img: require('../assets/select_weibo@2x.png'),
+            link: 'https://www.weibo.com/2236588723/profile?rightmod=1&wvr=6&mod=personinfo'
+        }
+    ];
+
+    enter(item: socialIconObject) {
+        item.is_hover = true;
+    }
+    leave(item: socialIconObject) {
+        item.is_hover = false;
+    }
 }
 </script>
 

@@ -12,7 +12,9 @@
                     <li>MOTION</li>
                     <li>IIIUSTRATION</li>
                 </ul>
-                <div class="tab-list-right">LET'S TALK</div>
+                <div class="tab-list-right">
+                    <a class="tab-list-right-a" href="mailto:nanshen415@gmail.com?subject=Hey Kristen, Let’s meet up!">LET'S TALK</a>
+                </div>
             </div>
         </div>
     </div>
@@ -69,14 +71,16 @@ export default class HomeTab extends Vue {
                height: 38px;
                text-align: center;
                line-height: 40px;
-               border: 1px solid #F3A951;
+               border: 2px solid #F3A951;
                border-radius: 22px;
-               margin: 15px 0 0 24px;
-               font-size:14px;
-               font-weight:600;
-               font-family:Gibson;
-               color: #333333;
-               cursor: pointer;
+               margin: 14px 0 0 24px;
+               .tab-list-right-a{
+                    color: #333333;
+                    cursor: pointer;
+                    font-size:14px;
+                    font-weight:600;
+                    font-family:Gibson;
+               }
             }
         }
     }

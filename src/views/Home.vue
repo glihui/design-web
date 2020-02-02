@@ -39,7 +39,7 @@
           </div>
           <div class="production-des" v-html="item.des">
           </div>
-          <span class="view-casestudy">
+          <span class="view-casestudy" @click="jumpToPage(item.link)">
             VIEW CASESTUDY
           </span>
         </div>
@@ -58,19 +58,19 @@
   export default class Home extends Vue {
     @Provide() evaluateList: Array<Object> = [
       {
-        icon: require("../assets/icon_AttentionToDetail.png"),
+        icon: require("../assets/icon_AttentionToDetail.gif"),
         title: "ATTENTION TO DETAIL",
         des: `I care about every single<br/>
               Pixel`
       },
       {
-        icon: require("../assets/icon_EnjoyLearning.png"),
+        icon: require("../assets/icon_EnjoyLearning.gif"),
         title: "ENJOY LEARNING",
         des: `I learn Adobe After Effect<br/>
               by myself`
       },
       {
-        icon: require("../assets/icon_TeamPlayer.png"),
+        icon: require("../assets/icon_TeamPlayer.gif"),
         title: "TEAM PLAYER",
         des: `Listening & being part of<br/>
               A team is where I’m at`
@@ -82,7 +82,8 @@
         des: `A mobile app created for people who <br/>
               want to keep fit, but who do not have <br/>
               time for the gym.`,
-        icon: require("../assets/production_icon_1.png")
+        icon: require("../assets/production_icon_1.png"),
+        link: "/power_fitness"
       },
       {
         title: "WEPET - PET APP DESIGN",
@@ -91,27 +92,35 @@
             WePet allows its users to track and monitor<br/>
             the care of their pets.
             `,
-        icon: require("../assets/production_icon_2.png")
+        icon: require("../assets/production_icon_2.png"),
+        link: "/power_fitness"
       },
       {
         title: "WEBSITE DESIGN",
         des: `A eCommerce website for furniture<br/>
             store.`,
-        icon: require("../assets/production_icon_3.png")     
+        icon: require("../assets/production_icon_3.png"),
+        link: "/power_fitness"   
       },
       {
         title: "ILLUSTRATION",
         des: `A liner icon display about<br/>
             Travel`,
-        icon: ""  
+        icon: "",
+        link: "/power_fitness"  
       },
       {
         title: "ICON DESIGN",
         des: `A liner icon display about<br/>
             travel.`,
-        icon: require("../assets/production_icon_5.png") 
+        icon: require("../assets/production_icon_5.png"),
+        link: "/power_fitness" 
       }
     ];
+
+    jumpToPage(value: string) {
+      this.$router.push(value);
+    }
   }
 </script>
 
@@ -151,7 +160,7 @@
         margin-top: 63px;
         text-align: center;
         line-height: 40px;
-        border: 1px solid #F3A951;
+        border: 2px solid #F3A951;
         border-radius: 21px;
         color: #333333;
         font-size: 14px;
@@ -192,8 +201,8 @@
         height:214px;
         text-align: center;
         .me-evaluate-img{
-          width: 80px;
-          height: 92px;
+          // width: 80px;
+          // height: 92px;
           margin: 26px auto 15px auto;
         }
         .evaluate-title{
@@ -257,7 +266,7 @@
       .view-casestudy{
         color: #333;
         line-height:19px;
-        border-bottom: 1px solid #f3a951;
+        border-bottom: 2px solid #f3a951;
         font-family:Gibson;
         font-size: 16px;
         font-weight: 600;
