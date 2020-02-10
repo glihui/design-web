@@ -93,7 +93,7 @@
             the care of their pets.
             `,
         icon: require("../assets/production_icon_2.png"),
-        link: "/power_fitness"
+        link: "/pet"
       },
       {
         title: "WEBSITE DESIGN",

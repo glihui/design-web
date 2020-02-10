@@ -13,6 +13,11 @@ const routes = [
     path: '/power_fitness',
     name: 'power_fitness',
     component: () => import('../views/PowerFitness.vue'),
+  },
+  {
+    path: '/pet',
+    name: 'pet',
+    component: () => import('../views/Pet.vue'),
   }
 ]
 
