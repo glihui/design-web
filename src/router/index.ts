@@ -18,6 +18,16 @@ const routes = [
     path: '/pet',
     name: 'pet',
     component: () => import('../views/Pet.vue'),
+  },
+  {
+    path: '/space',
+    name: 'space',
+    component: () => import('../views/Space.vue'),
+  },
+  {
+    path: '/iiiustration',
+    name: 'iiiustration',
+    component: () => import('../views/Iiiustration.vue'),
   }
 ]
 

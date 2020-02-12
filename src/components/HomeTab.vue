@@ -6,11 +6,11 @@
             </div>
             <div class="tab-list">
                 <ul class="tab-list-left">
-                    <li>APP</li>
-                    <li>WEB</li>
-                    <li>ICON</li>
-                    <li>MOTION</li>
-                    <li>IIIUSTRATION</li>
+                    <li :class="{'active-li':currentRoute === 'power_fitness'}" @click="jumpToPage('/power_fitness')">POWER</li>
+                    <li :class="{'active-li':currentRoute === 'pet'}" @click="jumpToPage('/pet')">WEPET</li>
+                    <li :class="{'active-li':currentRoute === 'space'}" @click="jumpToPage('/space')">SPACE</li>
+                    <li :class="{'active-li':currentRoute === 'iiiustration'}"@click="jumpToPage('/iiiustration')">ILLUSTRATION</li>
+                    <li :class="{'active-li':currentRoute === ''}" @click="jumpToPage('power_fitness')">ICON</li>
                 </ul>
                 <div class="tab-list-right">
                     <a class="tab-list-right-a" href="mailto:nanshen415@gmail.com?subject=Hey Kristen, Let’s meet up!">LET'S TALK</a>
@@ -29,8 +29,15 @@ export default class HomeTab extends Vue {
     
     
     created() {
+        console.log('---',this.$route)
+    }
+    jumpToPage(value: string) {
+      this.$router.push(value);
+    }
 
-       
+    get currentRoute() {
+        let currentName = this.$route.name;
+        return currentName;
     }
 }
 </script>
@@ -64,6 +71,10 @@ export default class HomeTab extends Vue {
                    font-size:14px;
                    color: #666666;
                    cursor: pointer;
+                }
+                .active-li{
+                    color: #333333;
+                    font-weight:bold;
                 }
             }
             .tab-list-right{

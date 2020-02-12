@@ -100,14 +100,14 @@
         des: `A eCommerce website for furniture<br/>
             store.`,
         icon: require("../assets/production_icon_3.png"),
-        link: "/power_fitness"   
+        link: "/space"   
       },
       {
         title: "ILLUSTRATION",
         des: `A liner icon display about<br/>
             Travel`,
-        icon: "",
-        link: "/power_fitness"  
+        icon: require("../assets/production_icon_4.png"),
+        link: "/iiiustration"  
       },
       {
         title: "ICON DESIGN",
@@ -291,6 +291,9 @@
     }
     .production-img-2{
       width: 556px;
+    }
+    .production-img-3{
+      width: 400px;
     }
     .production-img-4{
       width: 418px;

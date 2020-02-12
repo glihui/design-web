@@ -55,26 +55,7 @@
             <img class="width-value" src="../assets/pet7.png"/>
             <img class="width-value" src="../assets/pet8.png"/>
         </div>
-        <div class="other-like">
-            <div class="other-like-title">
-                YOU MAY ALSO LIKE
-            </div>
-            <div class="like-item-box">
-                <div class="like-item" 
-                    v-for="(item, index) in likeProductList"
-                    :key="index">
-                    <div class="product-img">
-                        <img :src="item.img"/>
-                    </div>
-                    <div class="product-name">
-                        {{item.title}}
-                    </div>
-                    <div class="product-time">
-                        {{item.time}}
-                    </div>
-                </div>
-            </div>
-        </div>
+        <MayLike></MayLike>
         <div v-show="btnFlag" class="back_top" @click="backTop">
             <img src="../assets/up_arrows.png"/>
         </div>
@@ -85,29 +66,18 @@
 import {
     Component, Provide, Prop, Vue
 } from 'vue-property-decorator';
+import MayLike from '@/components/MayLike.vue';
+ 
 
-@Component
+@Component({
+    components: {
+        MayLike,
+    }
+})
 export default class Pet extends Vue {
     @Provide() btnFlag:Boolean  = false;
     @Provide() scrollTop:number = 0;
-    @Provide() likeProductList:Array<Object> = [
-        {
-            img: require('@/assets/pet.png'),
-            title: 'WEPET - ANDROID APP DESIGN',
-            time: '2018'
-        },
-        {
-            img: require('@/assets/illustration.png'),
-            title: 'ILLUSTRATION',
-            time: '2019-2020'
-        },
-        {
-            img: require('@/assets/web_furniture.png'),
-            title: 'SPACE - WEB DESIGN',
-            time: '2019'
-        }
-    ]
-
+    
     mounted() {
         window.addEventListener('scroll', this.scrollToTop)
     }
@@ -233,52 +203,6 @@ export default class Pet extends Vue {
            }
            .margin-bottom-120{
                margin-bottom: 120px;
-           }
-       }
-       .other-like{
-            .other-like-title{
-                width: 1200px;
-                margin: 0 auto;
-                box-sizing: border-box;
-                color: #333333;
-                font-size: 20px;
-                padding: 108px 56px 48px 56px;
-                font-family:Gibson;
-                font-weight:600;
-            }
-            .like-item-box{
-                width: 1200px;
-                margin: 0 auto;
-                padding: 0 56px;
-                box-sizing: border-box;
-                display: flex;
-                justify-content: space-between;
-                margin-bottom: 50px;
-            }
-            .like-item{
-               background-color: #FBFCFF; 
-               height: 350px;
-               .product-img{
-                   width: 340px;
-                   height: 220px;
-                   img{
-                        width: 340px;
-                        height: 220px;
-                   }
-               }
-               .product-name{
-                   text-align: center;
-                   color: #333333;
-                   font-size: 16px;
-                   font-family:Gibson;
-                   font-weight:600;
-                   padding: 40px 0 10px 0;
-               }
-               .product-time{
-                   text-align: center;
-                   font-size:16px;
-                   color: #666666;
-               }
            }
        }
        .back_top{

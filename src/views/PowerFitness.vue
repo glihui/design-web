@@ -70,26 +70,7 @@
             <img class="width-value margin-top-32" src="../assets/fitness_13.png"/>
             <img class="width-value-750 margin-top-124" src="../assets/fitness_running.gif"/>
         </div>
-        <div class="other-like">
-            <div class="other-like-title">
-                YOU MAY ALSO LIKE
-            </div>
-            <div class="like-item-box">
-                <div class="like-item" 
-                    v-for="(item, index) in likeProductList"
-                    :key="index">
-                    <div class="product-img">
-                        <img :src="item.img"/>
-                    </div>
-                    <div class="product-name">
-                        {{item.title}}
-                    </div>
-                    <div class="product-time">
-                        {{item.time}}
-                    </div>
-                </div>
-            </div>
-        </div>
+        <MayLike></MayLike>
         <div v-show="btnFlag" class="back_top" @click="backTop">
             <img src="../assets/up_arrows.png"/>
         </div>
@@ -100,8 +81,14 @@
 import {
     Component, Provide, Prop, Vue
 } from 'vue-property-decorator';
+import MayLike from '@/components/MayLike.vue';
 
-@Component
+
+@Component({
+    components: {
+        MayLike,
+    }
+})
 export default class PowerFitness extends Vue {
     @Provide() btnFlag:Boolean  = false;
     @Provide() scrollTop:number = 0;
@@ -244,52 +231,6 @@ export default class PowerFitness extends Vue {
            }
            .margin-top-124{
                margin-top: 124px;
-           }
-       }
-       .other-like{
-            .other-like-title{
-                width: 1200px;
-                margin: 0 auto;
-                box-sizing: border-box;
-                color: #333333;
-                font-size: 20px;
-                padding: 108px 56px 48px 56px;
-                font-family:Gibson;
-                font-weight:600;
-            }
-            .like-item-box{
-                width: 1200px;
-                margin: 0 auto;
-                padding: 0 56px;
-                box-sizing: border-box;
-                display: flex;
-                justify-content: space-between;
-                margin-bottom: 50px;
-            }
-            .like-item{
-               background-color: #FBFCFF; 
-               height: 350px;
-               .product-img{
-                   width: 340px;
-                   height: 220px;
-                   img{
-                        width: 340px;
-                        height: 220px;
-                   }
-               }
-               .product-name{
-                   text-align: center;
-                   color: #333333;
-                   font-size: 16px;
-                   font-family:Gibson;
-                   font-weight:600;
-                   padding: 40px 0 10px 0;
-               }
-               .product-time{
-                   text-align: center;
-                   font-size:16px;
-                   color: #666666;
-               }
            }
        }
        .back_top{
