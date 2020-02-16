@@ -28,23 +28,28 @@ import {
 
 @Component
 export default class MayLike extends Vue {
-    @Provide() likeProductList:Array<Object> = [
-        {
-            img: require('@/assets/pet.png'),
-            title: 'WEPET - ANDROID APP DESIGN',
-            time: '2018'
-        },
-        {
-            img: require('@/assets/illustration.png'),
-            title: 'ILLUSTRATION',
-            time: '2019-2020'
-        },
-        {
-            img: require('@/assets/web_furniture.png'),
-            title: 'SPACE - WEB DESIGN',
-            time: '2019'
+    @Prop({
+        type: Array,
+        default: () => {
+            return [
+                {
+                    img: require('@/assets/pet.png'),
+                    title: 'WEPET - ANDROID APP DESIGN',
+                    time: '2018'
+                },
+                {
+                    img: require('@/assets/illustration.png'),
+                    title: 'ILLUSTRATION',
+                    time: '2019-2020'
+                },
+                {
+                    img: require('@/assets/web_furniture.png'),
+                    title: 'SPACE - WEB DESIGN',
+                    time: '2019'
+                }
+            ];
         }
-    ]   
+    }) private likeProductList !: Array<Object>;
 }    
 </script>
 

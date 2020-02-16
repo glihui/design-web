@@ -11,7 +11,7 @@
             Toronto, Canada
           </div>
           <div class="download-btn">
-            DOWNLOAD RESUME
+            <a href="@/assets/resume_NanShen.png" download="resume">DOWNLOAD RESUME</a>
           </div>
         </div>
         <div class="me-msg-right">
@@ -166,6 +166,9 @@
         font-size: 14px;
         font-weight: 600;
         cursor: pointer;
+        a{
+          color: #333333;
+        }
       }
     }
     .me-msg-right{

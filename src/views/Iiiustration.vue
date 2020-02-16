@@ -11,17 +11,21 @@
             <img src="@/assets/week_msg.png"/>
         </div>
         <MayLike></MayLike>
+        <back-top></back-top>
     </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue, Provide } from 'vue-property-decorator';
 import MayLike from '@/components/MayLike.vue';
+import BackTop from '@/components/BackTop.vue';
+
 
 
 @Component({
     components: {
         MayLike,
+        BackTop
     }
 })
 export default class Iiiustration extends Vue {

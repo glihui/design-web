@@ -1,7 +1,7 @@
 <template>
     <div class="tab_div">
         <div class="tab_box">
-            <div class="logo">
+            <div class="logo" @click="jumpToPage('/')">
                 KRISTEN SHEN
             </div>
             <div class="tab-list">
@@ -9,8 +9,8 @@
                     <li :class="{'active-li':currentRoute === 'power_fitness'}" @click="jumpToPage('/power_fitness')">POWER</li>
                     <li :class="{'active-li':currentRoute === 'pet'}" @click="jumpToPage('/pet')">WEPET</li>
                     <li :class="{'active-li':currentRoute === 'space'}" @click="jumpToPage('/space')">SPACE</li>
-                    <li :class="{'active-li':currentRoute === 'iiiustration'}"@click="jumpToPage('/iiiustration')">ILLUSTRATION</li>
-                    <li :class="{'active-li':currentRoute === ''}" @click="jumpToPage('power_fitness')">ICON</li>
+                    <li :class="{'active-li':currentRoute === 'iiiustration'}" @click="jumpToPage('/iiiustration')">ILLUSTRATION</li>
+                    <li :class="{'active-li':currentRoute === ''}" @click="jumpToPage('/icon')">ICON</li>
                 </ul>
                 <div class="tab-list-right">
                     <a class="tab-list-right-a" href="mailto:nanshen415@gmail.com?subject=Hey Kristen, Let’s meet up!">LET'S TALK</a>
@@ -32,7 +32,9 @@ export default class HomeTab extends Vue {
         console.log('---',this.$route)
     }
     jumpToPage(value: string) {
-      this.$router.push(value);
+      if (this.$route.path != value) {
+          this.$router.push(value);
+      }
     }
 
     get currentRoute() {
@@ -59,6 +61,7 @@ export default class HomeTab extends Vue {
             font-size:14px;
             font-family:Andale Mono;
             color: #707070;
+            cursor: pointer;
         }
         .tab-list{
             display: flex;

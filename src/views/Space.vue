@@ -97,7 +97,8 @@
         <div class="space-box-2">
             <img src="@/assets/main_page.png"/>
         </div>
-        <MayLike></MayLike>
+        <MayLike :likeProductList="likeProductList"></MayLike>
+        <back-top></back-top>
     </div>
 </template>
 
@@ -106,15 +107,34 @@
         Component, Provide, Prop, Vue
     } from 'vue-property-decorator';
     import MayLike from '@/components/MayLike.vue';
+    import BackTop from '@/components/BackTop.vue';
+
 
 
     @Component({
         components: {
-            MayLike
+            MayLike,
+            BackTop
         }
     })
     export default class Space extends Vue {
-        
+        @Provide() likeProductList:Array<Object> = [
+            {
+                img: require('@/assets/fitness.png'),
+                title: 'POWER FITNESS APP',
+                time: '2018'
+            },
+            {
+                img: require('@/assets/illustration.png'),
+                title: 'ILLUSTRATION',
+                time: '2019-2020'
+            },
+            {
+                img: require('@/assets/web_furniture.png'),
+                title: 'SPACE - WEB DESIGN',
+                time: '2019'
+            }
+        ]
     }
 </script>
 

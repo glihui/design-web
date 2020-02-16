@@ -28,6 +28,11 @@ const routes = [
     path: '/iiiustration',
     name: 'iiiustration',
     component: () => import('../views/Iiiustration.vue'),
+  },
+  {
+    path: '/icon',
+    name: 'icon',
+    component: () => import('../views/Icon.vue'),
   }
 ]
 
