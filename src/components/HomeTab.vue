@@ -10,7 +10,7 @@
                     <li :class="{'active-li':currentRoute === 'pet'}" @click="jumpToPage('/pet')">WEPET</li>
                     <li :class="{'active-li':currentRoute === 'space'}" @click="jumpToPage('/space')">SPACE</li>
                     <li :class="{'active-li':currentRoute === 'iiiustration'}" @click="jumpToPage('/iiiustration')">ILLUSTRATION</li>
-                    <li :class="{'active-li':currentRoute === ''}" @click="jumpToPage('/icon')">ICON</li>
+                    <li :class="{'active-li':currentRoute === 'icon'}" @click="jumpToPage('/icon')">ICON</li>
                 </ul>
                 <div class="tab-list-right">
                     <a class="tab-list-right-a" href="mailto:nanshen415@gmail.com?subject=Hey Kristen, Let’s meet up!">LET'S TALK</a>
@@ -89,11 +89,20 @@ export default class HomeTab extends Vue {
                border-radius: 22px;
                margin: 14px 0 0 24px;
                .tab-list-right-a{
+                    display: block;
+                    width: 100%;
+                    height: 100%;
                     color: #333333;
                     cursor: pointer;
                     font-size:14px;
                     font-weight:600;
                     font-family:Gibson;
+               }
+               &:hover{
+                   background-color: #F3A951;
+               }
+               &:hover a{
+                   color: #fff;
                }
             }
         }

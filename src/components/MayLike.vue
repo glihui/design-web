@@ -6,7 +6,8 @@
         <div class="like-item-box">
             <div class="like-item" 
                 v-for="(item, index) in likeProductList"
-                :key="index">
+                :key="index"
+                @click="jumpToPage(item.link)">
                 <div class="product-img">
                     <img :src="item.img"/>
                 </div>
@@ -35,21 +36,30 @@ export default class MayLike extends Vue {
                 {
                     img: require('@/assets/pet.png'),
                     title: 'WEPET - ANDROID APP DESIGN',
-                    time: '2018'
+                    time: '2018',
+                    link: '/pet'
                 },
                 {
                     img: require('@/assets/illustration.png'),
                     title: 'ILLUSTRATION',
-                    time: '2019-2020'
+                    time: '2019-2020',
+                    link: '/iiiustration'
                 },
                 {
                     img: require('@/assets/web_furniture.png'),
                     title: 'SPACE - WEB DESIGN',
-                    time: '2019'
+                    time: '2019',
+                    link: '/space'
                 }
             ];
         }
     }) private likeProductList !: Array<Object>;
+
+    jumpToPage(value: string) {
+      if (this.$route.path != value) {
+          this.$router.push(value);
+      }
+    }
 }    
 </script>
 
@@ -72,6 +82,7 @@ export default class MayLike extends Vue {
             display: flex;
             justify-content: space-between;
             margin-bottom: 50px;
+            cursor: pointer;
         }
         .like-item{
             background-color: #FBFCFF; 

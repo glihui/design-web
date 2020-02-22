@@ -11,7 +11,7 @@
             Toronto, Canada
           </div>
           <div class="download-btn">
-            <a href="@/assets/resume_NanShen.png" download="resume">DOWNLOAD RESUME</a>
+            <a href="http://kristen.guolh.com/img/resume_NanShen.png" download="resume">DOWNLOAD RESUME</a>
           </div>
         </div>
         <div class="me-msg-right">
@@ -166,7 +166,16 @@
         font-size: 14px;
         font-weight: 600;
         cursor: pointer;
+        &:hover{
+          background-color: #F3A951;
+        }
+        &:hover a{
+          color: #fff;
+        }
         a{
+          display: block;
+          width: 100%;
+          height: 100%;
           color: #333333;
         }
       }

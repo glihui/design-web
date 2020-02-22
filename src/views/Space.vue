@@ -95,7 +95,11 @@
             </div>
         </div>
         <div class="space-box-2">
-            <img src="@/assets/main_page.png"/>
+            <el-carousel :class="[`carousel-${currentIndex}`]" :autoplay="false" arrow="always" @change="changeIndex">
+                <el-carousel-item :class="[`carousel-item-${currentIndex}`]" v-for="(item,index) in spaceList" :key="index">
+                    <img :src="item.img"/>
+                </el-carousel-item>
+            </el-carousel>
         </div>
         <MayLike :likeProductList="likeProductList"></MayLike>
         <back-top></back-top>
@@ -122,19 +126,40 @@
             {
                 img: require('@/assets/fitness.png'),
                 title: 'POWER FITNESS APP',
-                time: '2018'
+                time: '2018',
+                link: '/power_fitness'
             },
             {
                 img: require('@/assets/illustration.png'),
                 title: 'ILLUSTRATION',
-                time: '2019-2020'
+                time: '2019-2020',
+                link: '/iiiustration'
             },
             {
                 img: require('@/assets/web_furniture.png'),
                 title: 'SPACE - WEB DESIGN',
-                time: '2019'
+                time: '2019',
+                link: '/space'
             }
         ]
+
+        @Provide() spaceList:Array<Object> = [
+            {
+                img: require('@/assets/main_page.png')
+            },
+            {
+                img: require('@/assets/join_us.png')
+            },
+            {
+                img: require('@/assets/about.png')
+            }
+        ];
+
+        @Provide() currentIndex:Number = 0;
+
+        changeIndex(index: Number) {
+            this.currentIndex = index;
+        }
     }
 </script>
 
@@ -275,6 +300,52 @@
         padding-top: 64px;
         img{
             width: 100%;
+        }
+    }
+</style>
+
+<style lang="scss">
+    .space-box{
+        .el-carousel__arrow{
+            width: 100px;
+            height: 100px;
+            font-size: 50px;
+        }
+        .el-carousel__container{
+            width: 1088px;
+            // height: 5452px;
+        }
+        .carousel-0{
+            height: 3598px;
+            .el-carousel__container{
+                height: 3598px;
+            }
+        }
+        .carousel-1{
+            height: 2976px;
+            .el-carousel__container{
+                height: 2976px;
+            }
+        }
+        .carousel-2{
+            height: 3006px;
+            .el-carousel__container{
+                height: 3006px;
+            }
+        }
+        
+        .el-carousel__item {
+            width: 1088px;
+            height: 3598px;
+        }
+        .carousel-item-0{
+            height: 3598px;
+        }
+        .carousel-item-1{
+            height: 2976px;
+        }
+        .carousel-item-2{
+            height: 3006px;
         }
     }
 </style>

@@ -54,6 +54,7 @@ export default class PowerFitness extends Vue {
         position: fixed;
         right: 50px;
         bottom: 100px;
+        z-index: 2;
         cursor: pointer;
         img{
             width: 60px;

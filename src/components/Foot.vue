@@ -15,8 +15,14 @@
             <div class="user-relation">
                 <div class="relation-title">Let's Talk</div>
                 <div class="relation-way">1(437)-243-3388</div>
-                <div class="relation-way">nanshen415@gmail.com</div>
-                <div class="relation-way">Resume</div>
+                <div class="relation-way">
+                    <a href="mailto:nanshen415@gmail.com?subject=Hey Kristen, Let’s meet up!">
+                        nanshen415@gmail.com
+                    </a>
+                </div>
+                <div class="relation-way">
+                    <a href="http://kristen.guolh.com/img/resume_NanShen.png" download="resume">Resume</a>
+                </div>
             </div>
             <div class="social-link">
                 <div class="social-link-title">Social Links</div>
@@ -112,6 +118,9 @@ export default class Foot extends Vue{
                     font-size: 16px;
                     line-height:21px;
                     padding-top: 30px;
+                    a{
+                        color: #666666;
+                    }
                 }
             }
             .social-link{
